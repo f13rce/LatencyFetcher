@@ -154,9 +154,16 @@ for country in countries:
 	uc = 0
 	for url in urls:
 		uc += 1
-		print("++++++++++++++++++++++++++++++++++++")
-		print("+ Getting ping data from {} ({}/{})... +".format(url, uc, len(urls)))
-		print("++++++++++++++++++++++++++++++++++++")
+
+		# Print progress
+		str = "* Getting ping data from {} ({}/{})... *".format(url, uc, len(urls))
+		starStr = ""
+		for i in range(len(str)):
+			starStr += "*"
+
+		print(starStr)
+		print(str)
+		print(starStr)
 
 		res = GetPingTimes(url, country)
 		if res:
