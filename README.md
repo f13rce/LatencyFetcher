@@ -1,5 +1,5 @@
 # LatencyFetcher
-Grab latency of continents their web servers based on its top visited sites
+Grab latency of countries their web servers based on its top visited sites.
 
 # Usage
 
@@ -14,3 +14,5 @@ A Linux distro, since every ``os.system`` and ``os.popen`` command is Linux-spec
 # Results
 
 Output will give you a results-$DATE.csv file listing all the countries with their median, mean, min, max ping, sample size and websites it was able to test (that originate from the same country).
+
+Note that some servers have disabled ICMP, so those web servers will be ignored and flagged as ``Index out of range error``, seeing how the ``ping`` command did not deliver any ping results. These servers will be ignored in the final results.
