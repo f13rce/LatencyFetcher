@@ -15,7 +15,6 @@ resultsFile = "results-{}.csv".format(dateStr)
 
 countries = ["US", "NL", "CN", "JP", "AU"] # Needs to have this at the end
 pingCountPerWebsite = 10
-userAgent = "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"
 
 # Classes
 class IPInfo:
@@ -25,10 +24,6 @@ class IPInfo:
 	city = ""
 
 # Funcs
-def GetTime():
-	# Returns time in ms
-	return int(round(time.time() * 1000))
-
 def GetPingTimes(aWebsiteURL, aFilter):
 	times = []
 
@@ -91,7 +86,6 @@ def GetWebsiteList(aCountry):
 	url = "https://www.alexa.com/topsites/countries/{}".format(aCountry)
 
 	print("Fetching list of {} countries ({})...".format(aCountry, url))
-	#page = os.popen("curl --user-agent '{}' {}".format(userAgent, url))
 	os.system("wget {}".format(url))
 
 	page = ""
