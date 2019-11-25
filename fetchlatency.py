@@ -99,7 +99,7 @@ def GetWebsiteList(aCountry):
 		page = f.read()
 
 	print("\tParsing result...")
-	page = str(page)
+	page = "{}".format(page)
 	page = page.replace(">", "<").split("<")
 	searchStr = 'class="tr site-listing"'
 
