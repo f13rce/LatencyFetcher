@@ -128,7 +128,7 @@ def ParseResults(aCountry, aPings, aWebsites):
 
 	mean = total / len(aPings)
 
-	aPings = aPings.sort() # Get proper median
+	aPings.sort() # Get proper median
 	median = aPings[round(len(aPings) / 2)]
 
 	with open(resultsFile, "a") as f:
@@ -174,7 +174,10 @@ for country in countries:
 			websites.append(url)
 
 	# Parse results
-	ParseResults(country, pings, websites)
+	if pings:
+		ParseResults(country, pings, websites)
+	else:
+		print("============== WARNING: Somehow, we have no results for {}! ==============".format(country))
 
 	# Clean up :)
 	os.system("rm {}".format(country))
