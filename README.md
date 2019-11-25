@@ -10,3 +10,7 @@ Then run the file: ``python3 fetchlatency.py``
 # Requirements
 
 A Linux distro, since every ``os.system`` and ``os.popen`` command is Linux-specific (``curl``, ``rm``, etc).
+
+# Results
+
+Output will give you a results-$DATE.csv file listing all the countries with their median, mean, min, max ping, sample size and websites it was able to test (that originate from the same country).
