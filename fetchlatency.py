@@ -57,7 +57,7 @@ def GetPingTimes(aWebsiteURL, aFilter):
 	except KeyboardInterrupt:
 		print("\tDetected keyboard interrupt - will stop.")
 	except IndexError:
-		print("\tSeems like {} ({}) has disabled ICMP, or is unreachable. Ignoring this site...".format(aWebsiteURL, ip))
+		print("\tSeems like {} has disabled ICMP, or is unreachable. Ignoring this site...".format(aWebsiteURL))
 		pass
 	except Exception as e:
 		print("\tSomething went wrong when processing {}. Error: '{}'. Will skip this one.".format(aWebsiteURL, repr(e)))
