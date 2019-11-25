@@ -125,6 +125,8 @@ def ParseResults(aCountry, aPings, aWebsites):
 			high = ping
 
 	mean = total / len(aPings)
+
+	aPings = aPings.sort() # Get proper median
 	median = aPings[round(len(aPings) / 2)]
 
 	with open(resultsFile, "a") as f:
